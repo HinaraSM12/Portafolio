@@ -1,6 +1,4 @@
-Thanks for downloading this template!
+Thanks for visiting my respository
 
-Template Name: Personal
-Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Author: Hinara Pastora Sánchez Mata
+Link: https://hinarasm12.github.io/Portafolio/
