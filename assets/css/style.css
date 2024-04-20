@@ -563,9 +563,8 @@ section .container {
   border: 2px solid #18b6d2;
 }
 
-.resume .row{
-  flex-wrap: nowrap;
-}
+
+
 
 /*--------------------------------------------------------------
 # Services
