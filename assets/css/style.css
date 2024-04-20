@@ -805,6 +805,7 @@ section .container {
   right: 15px;
 }
 
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -875,6 +876,10 @@ section .container {
 
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #18b6d2;
+}
+
+.swiper-slide img{
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
