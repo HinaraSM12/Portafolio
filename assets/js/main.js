@@ -281,27 +281,31 @@
     // Restringir la posición top entre el 10% y el 90% de la altura de la ventana
     const windowHeight = window.innerHeight;
     const minTop = windowHeight * 0.1; // 10% de la altura de la ventana
-    const maxTop = windowHeight * 0.95 - size; // 90% de la altura de la ventana menos el tamaño de la bola
+    const maxTop = windowHeight * 0.9 - size; // 90% de la altura de la ventana menos el tamaño de la bola
     ball.style.top = `${Math.random() * (maxTop - minTop) + minTop}px`;
   
     // Restringir la posición left entre el 10% y el 90% del ancho de la ventana
     const windowWidth = window.innerWidth;
     const minLeft = windowWidth * 0.1; // 10% del ancho de la ventana
-    const maxLeft = windowWidth * 1 - size; // 90% del ancho de la ventana menos el tamaño de la bola
+    const maxLeft = windowWidth * 0.9 - size; // 90% del ancho de la ventana menos el tamaño de la bola
     ball.style.left = `${Math.random() * (maxLeft - minLeft) + minLeft}px`;
   
     // Restringir la posición bottom entre el 10% y el 90% de la altura de la ventana
     const minBottom = windowHeight * 0.1; // 10% de la altura de la ventana
-    const maxBottom = windowHeight * 0.90 - size; // 90% de la altura de la ventana menos el tamaño de la bola
+    const maxBottom = windowHeight * 0.9 - size; // 90% de la altura de la ventana menos el tamaño de la bola
     ball.style.bottom = `${Math.random() * (maxBottom - minBottom) + minBottom}px`;
   
     // Restringir la posición right entre el 10% y el 90% del ancho de la ventana
     const minRight = windowWidth * 0.1; // 10% del ancho de la ventana
-    const maxRight = windowWidth * 0.90 - size; // 90% del ancho de la ventana menos el tamaño de la bola
+    const maxRight = windowWidth * 0.9 - size; // 90% del ancho de la ventana menos el tamaño de la bola
     ball.style.right = `${Math.random() * (maxRight - minRight) + minRight}px`;
   
     ball.classList.add('ball');
-    document.body.appendChild(ball);
+  
+    // Insertar la bola al principio del cuerpo del documento
+    const body = document.body;
+    const firstChild = body.firstChild;
+    body.insertBefore(ball, firstChild);
   
     // Elimina la bola después de 10 segundos
     setTimeout(() => {
@@ -311,6 +315,7 @@
   
   // Crear bolas de colores continuamente
   setInterval(createBall, 800);
+  
   
 
 })();

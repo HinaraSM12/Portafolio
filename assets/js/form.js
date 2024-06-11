@@ -69,4 +69,5 @@ document.addEventListener('DOMContentLoaded', () => {
             // form.submit(); // Descomentar esta línea si se desea enviar el formulario
         }
     });
+    
   });
