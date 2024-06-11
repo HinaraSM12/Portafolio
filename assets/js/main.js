@@ -1,9 +1,3 @@
-/**
-* Template Name: Personal - v4.10.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -38,8 +32,9 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
+    const elementPos = select(el).offsetTop
     window.scrollTo({
-      top: 0,
+      top: elementPos,
       behavior: 'smooth'
     })
   }
@@ -54,7 +49,7 @@
   })
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '#navbar .nav-link', function(e) {
     let section = select(this.hash)
@@ -184,7 +179,7 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -249,4 +244,73 @@
    */
   new PureCounter();
 
-})()
+  // Funcionalidad de bolas de colores
+  const colors = [
+    'rgba(240, 248, 255, 0.5)',  // Alice azul
+    'rgba(230, 230, 250, 0.5)',  // Lavanda
+    'rgba(176, 224, 230, 0.5)',  // Azul pálido
+    'rgba(173, 216, 230, 0.5)',  // Azul claro
+    'rgba(135, 206, 250, 0.5)',  // Cielo azul claro
+    'rgba(135, 206, 235, 0.5)',  // Cielo azul
+    'rgba(0, 191, 255, 0.5)',    // Deepskyblue
+    'rgba(176, 196, 222, 0.5)',  // Azul claro (Light Steel Blue)
+    'rgba(30, 144, 255, 0.5)',   // Dodgerblue
+    'rgba(100, 149, 237, 0.5)',  // Azul aciano
+    'rgba(70, 130, 180, 0.5)',   // Azul acero
+    'rgba(95, 158, 160, 0.5)',   // Cadete azul
+    'rgba(123, 104, 238, 0.5)',  // Medio pizarra azul
+    'rgba(106, 90, 205, 0.5)',   // Pizarra azul
+    'rgba(72, 61, 139, 0.5)',    // Azul oscuro
+    'rgba(65, 105, 225, 0.5)',   // Azul real
+    'rgba(0, 0, 255, 0.5)',      // Azul
+    'rgba(0, 0, 205, 0.5)',      // Azul medio
+    'rgba(0, 0, 139, 0.5)',      // Azul oscuro (Dark Blue)
+    'rgba(0, 0, 128, 0.5)',      // Armada
+    'rgba(25, 25, 112, 0.5)',    // Medianoche azul
+    'rgba(138, 43, 226, 0.5)',   // Violeta Azul
+    'rgba(75, 0, 130, 0.5)'      // Índigo
+  ];
+
+  function createBall() {
+    const ball = document.createElement('div');
+    const size = Math.random() * 100 + 50; // Tamaño entre 50 y 150px
+    ball.style.width = `${size}px`;
+    ball.style.height = `${size}px`;
+    ball.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  
+    // Restringir la posición top entre el 10% y el 90% de la altura de la ventana
+    const windowHeight = window.innerHeight;
+    const minTop = windowHeight * 0.1; // 10% de la altura de la ventana
+    const maxTop = windowHeight * 0.95 - size; // 90% de la altura de la ventana menos el tamaño de la bola
+    ball.style.top = `${Math.random() * (maxTop - minTop) + minTop}px`;
+  
+    // Restringir la posición left entre el 10% y el 90% del ancho de la ventana
+    const windowWidth = window.innerWidth;
+    const minLeft = windowWidth * 0.1; // 10% del ancho de la ventana
+    const maxLeft = windowWidth * 1 - size; // 90% del ancho de la ventana menos el tamaño de la bola
+    ball.style.left = `${Math.random() * (maxLeft - minLeft) + minLeft}px`;
+  
+    // Restringir la posición bottom entre el 10% y el 90% de la altura de la ventana
+    const minBottom = windowHeight * 0.1; // 10% de la altura de la ventana
+    const maxBottom = windowHeight * 0.90 - size; // 90% de la altura de la ventana menos el tamaño de la bola
+    ball.style.bottom = `${Math.random() * (maxBottom - minBottom) + minBottom}px`;
+  
+    // Restringir la posición right entre el 10% y el 90% del ancho de la ventana
+    const minRight = windowWidth * 0.1; // 10% del ancho de la ventana
+    const maxRight = windowWidth * 0.90 - size; // 90% del ancho de la ventana menos el tamaño de la bola
+    ball.style.right = `${Math.random() * (maxRight - minRight) + minRight}px`;
+  
+    ball.classList.add('ball');
+    document.body.appendChild(ball);
+  
+    // Elimina la bola después de 10 segundos
+    setTimeout(() => {
+      ball.remove();
+    }, 10000);
+  }
+  
+  // Crear bolas de colores continuamente
+  setInterval(createBall, 800);
+  
+
+})();

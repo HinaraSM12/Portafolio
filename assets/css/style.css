@@ -1,10 +1,3 @@
-/**
-* Template Name: Personal - v4.10.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -19,7 +12,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/a.jpg") top right no-repeat;
+  background: #040404 url("../img/fondo.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -889,6 +882,7 @@ section .container {
   padding: 20px;
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
 }
 
 .contact .info-box i.bx {
@@ -960,24 +954,8 @@ section .container {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
-  display: none;
-  background: rgba(255, 255, 255, 0.08);
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18b6d2;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
+#message{
+  max-width: 500px;
 }
 
 .contact .php-email-form input,
@@ -1080,4 +1058,28 @@ section .container {
 
 .credits a:hover {
   color: #fff;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: move 10s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
